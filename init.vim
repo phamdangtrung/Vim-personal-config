@@ -9,20 +9,33 @@
 
 call plug#begin()
 
-Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-Plug 'https://github.com/preservim/nerdtree' " NerdTree
-Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
-Plug 'https://github.com/vim-airline/vim-airline' " Status bar
-Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
-Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
+" UI plugins
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
-Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
-Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
-Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+Plug 'https://github.com/tpope/vim-endwise'
+Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
+Plug 'https://github.com/vim-airline/vim-airline' " Status bar
+Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
+Plug 'https://github.com/jiangmiao/auto-pairs'
+Plug 'https://github.com/sheerun/vim-polyglot'
+
+" Bundles
+Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
+Plug 'https://github.com/OmniSharp/omnisharp-vim'
+Plug 'https://github.com/elixir-editors/vim-elixir'
+Plug 'https://github.com/slashmili/alchemist.vim'
+Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+Plug 'https://github.com/tpope/vim-rails'
+
+" Tools
+Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+Plug 'https://github.com/ervandew/supertab'
+Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
+Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
 
 set encoding=UTF-8
 
@@ -70,4 +83,11 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <C-p> :Files<Cr>
+inoremap <silent><expr> <c-space> coc#refresh()
 
+" Coc plugins
+" CocInstall coc-git coc-snippets coc-tsserver coc-html coc-css
+" CocInstall coc-emmet coc-highlight coc-eslint coc-json coc-rls
+" CocInstall coc-yaml coc-vetur coc-solargraph coc-prettier 
+" CocInstall coc-pairs coc-tslint coc-python coc-omnisharp coc-elixir
+" OmnisharpInstall
