@@ -36,6 +36,9 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'https://github.com/ervandew/supertab'
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
+Plug 'https://github.com/nathanaelkane/vim-indent-guides'	
+Plug 'https://github.com/vim-autoformat/vim-autoformat'
+Plug 'https://github.com/github/copilot.vim'
 
 set encoding=UTF-8
 
@@ -63,6 +66,16 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+" indent guide	
+let g:indent_guides_enable_on_vim_startup = 1	
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=2	
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=blue ctermbg=3
+
+" vim-autoformat 	
+let g:python3_host_prog="/usr/bin/python3"	
+noremap <F3> :Autoformat<CR>	
+au BufWrite * :Autoformat
+
 " Esc substitutes
 :imap kj <Esc>
 :imap jk <Esc>
@@ -84,6 +97,7 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <C-p> :Files<Cr>
 inoremap <silent><expr> <c-space> coc#refresh()
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " Coc plugins
 " CocInstall coc-git coc-snippets coc-tsserver coc-html coc-css
@@ -91,3 +105,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " CocInstall coc-yaml coc-vetur coc-solargraph coc-prettier 
 " CocInstall coc-pairs coc-tslint coc-python coc-omnisharp coc-elixir
 " OmnisharpInstall
+
+" Install exuberant
+		
+let g:formatterpath = ['/home/phamd/.rbenv/shims/htmlbeautifier']
