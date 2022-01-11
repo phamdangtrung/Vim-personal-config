@@ -6,6 +6,8 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+:set showmatch
+:set matchtime=3
 
 call plug#begin()
 
