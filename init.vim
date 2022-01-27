@@ -59,7 +59,7 @@ call plug#end()
 
 nmap <F8> :TagbarToggle<CR>
 
-:colorscheme sonokai
+:colorscheme onedark
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -228,5 +228,9 @@ sources = cmp.config.sources({
       init_options = {
         AutomaticWorkspaceInit = true
             }
+      }
+  lspconfig.elixirls.setup {
+      cmd = { "/home/tun/.lsp-servers/elixirls/language_server.sh" },
+      capabilities = capabilities
       }
 EOF
