@@ -26,10 +26,11 @@ Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/OmniSharp/omnisharp-vim'
 Plug 'https://github.com/elixir-editors/vim-elixir'
+Plug 'https://github.com/vim-ruby/vim-ruby'
 Plug 'https://github.com/slashmili/alchemist.vim'
 " Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/tpope/vim-rails'
-Plug 'https://github.com/tree-sitter/tree-sitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'https://github.com/hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
@@ -58,7 +59,7 @@ call plug#end()
 
 nmap <F8> :TagbarToggle<CR>
 
-:colorscheme sonokai
+:colorscheme onedark
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -87,6 +88,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=blue ctermbg=3
 let g:python3_host_prog="/usr/bin/python3"
 noremap <F3> :Autoformat<CR>
 au BufWrite * :Autoformat
+
+let g:OmniSharp_server_stdio = 0
 
 " Esc substitutes
 :imap kj <Esc>
@@ -221,8 +224,15 @@ sources = cmp.config.sources({
               }
           }
       }
+  lspconfig.csharp_ls.setup {
+      cmd = { "csharp-ls" },
+      filetypes = { "cs" },
+      init_options = {
+        AutomaticWorkspaceInit = true
+            }
+      }
   lspconfig.elixirls.setup {
-      cmd = { "/home/phamd/.lsp-servers/elixirls/language_server.sh" },
+      cmd = { "/home/tun/.lsp-servers/elixirls/language_server.sh" },
       capabilities = capabilities
       }
 EOF
