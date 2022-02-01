@@ -250,5 +250,10 @@ lspconfig.elixirls.setup {
     cmd = {"/home/tun/.lsp-servers/elixirls/language_server.sh"},
     capabilities = capabilities
 }
-
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
 EOF
