@@ -49,7 +49,7 @@ Plug 'https://github.com/ervandew/supertab'
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
 " Plug 'https://github.com/nathanaelkane/vim-indent-guides'
-Plug 'https://github.com/vim-autoformat/vim-autoformat'
+" Plug 'https://github.com/vim-autoformat/vim-autoformat'
 Plug 'https://github.com/github/copilot.vim'
 Plug 'neovim/nvim-lspconfig'
 
