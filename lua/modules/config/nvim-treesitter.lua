@@ -7,12 +7,9 @@ treesitter.setup {
   ensure_installed = {
     'ruby',
     'c_sharp',
-    'eex',
-    'elixir',
     'go',
     'haskell',
     'erlang',
-    'heex',
     'html',
     'javascript',
     'json',
@@ -32,6 +29,9 @@ treesitter.setup {
   autopairs = {
     enable = true,
     extended_mode = true,
+  },
+  endwise = {
+    enable = true
   },
   rainbow = { enable = true },
   autotag = { enable = true },

@@ -25,9 +25,12 @@ o.mouse = 'a'
 
 -- Tabs
 o.smarttab = true
-o.softtabstop = 4
-o.tabstop = 4
+o.softtabstop = 2
+o.tabstop = 2
 o.autoindent = true
+o.shiftwidth = 2
+
+
 
 -- Format options
 -- o.formatoptions = o.formatoptions

@@ -1,4 +1,4 @@
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 local on_attach = require "modules.lsp.on_attach"
 
 if package.loaded['cmp_nvim_lsp'] then
@@ -12,7 +12,7 @@ lspconfig.csharp_ls.setup {
   init_options = {
     AutomaticWorkspaceInit = true
   },
-  root_dir = lspconfig.util.root_pattern(".git", "."),
+  -- root_dir = lspconfig.util.root_pattern(".git", "."),
   capabilities = capabilities,
   on_attach = on_attach,
 }

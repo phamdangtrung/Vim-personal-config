@@ -1,4 +1,4 @@
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 local on_attach = require "modules.lsp.on_attach"
 if package.loaded['cmp_nvim_lsp'] then
     capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -12,10 +12,12 @@ lspconfig.solargraph.setup {
   filetypes = {
       "ruby"
   },
+  init_options = {
+    formatting = true
+  },
   on_attach = on_attach,
   root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
   capabilities = capabilities,
-  handlers = handlers,
   settings = {
     solargraph = {
       bundlerPath = "bundle",

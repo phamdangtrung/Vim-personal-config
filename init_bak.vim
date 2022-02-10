@@ -10,12 +10,6 @@ Plug 'https://github.com/sheerun/vim-polyglot'
 
 " Bundles
 
-Plug 'https://github.com/elixir-editors/vim-elixir'
-Plug 'https://github.com/vim-ruby/vim-ruby'
-Plug 'https://github.com/slashmili/alchemist.vim'
-" Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
-Plug 'https://github.com/tpope/vim-rails'
-
 Plug 'hrsh7th/cmp-cmdline'
 
 " Tools

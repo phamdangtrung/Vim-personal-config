@@ -2,9 +2,10 @@ local function lua_nmap(key, cmd, opts)
   require('core.utils').keymap.buf_map('n', key, '<cmd>lua ' .. cmd .. '<CR>', opts)
 end
 return function(client, bufnr)
+  -- local lsp_status = require'lsp-status'
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   local opts = { noremap=true, silent=true }
-
+  -- lsp_status.on_attach(client)
   lua_nmap('K', 'vim.lsp.buf.hover()', opts)
   lua_nmap('<C-k>', 'vim.lsp.buf.signature_help()', opts)
   lua_nmap('gd', 'vim.lsp.buf.definition()', opts)

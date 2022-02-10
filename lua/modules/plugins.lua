@@ -7,16 +7,6 @@ return {
     'rafi/awesome-vim-colorschemes',
     config = conf 'colors',
   },
-  -- { -- Airline
-  --   { -- Base
-  --     'vim-airline/vim-airline',
-  --     config = conf 'airline'
-  --   },
-  --   { -- Theme
-  --     'vim-airline/vim-airline-themes',
-  --     config = conf 'airline-themes'
-  --   },
-  -- },
   { -- Tagbar
     'preservim/tagbar',
     config = conf 'tagbar'
@@ -25,40 +15,35 @@ return {
     'kyazdani42/nvim-web-devicons',
     config = conf 'nvim-web-devicons',
   },
-  { -- File tree
-    { -- NerdTree
-      'preservim/nerdtree',
-      requires = {
-        'ryanoasis/vim-devicons'
-      },
-      config = conf 'nerdtree',
-    },
-    { -- NerdTree syntax highlighting
-      'tiagofumo/vim-nerdtree-syntax-highlight',
-      config = conf 'nerdtree-syntax-highlight'
-    },
-  },
   { -- Fuzzy Finder
     'nvim-telescope/telescope.nvim',
     config = conf 'telescope',
     requires = { 'nvim-lua/plenary.nvim' },
   },
   { -- Treesiter
-    'nvim-treesitter/nvim-treesitter',
-    config = conf 'nvim-treesitter',
-    requires = {
-      'JoosepAlviste/nvim-ts-context-commentstring',
-      'p00f/nvim-ts-rainbow',
-      'windwp/nvim-ts-autotag',
-    }
+    {
+      'nvim-treesitter/nvim-treesitter',
+      config = conf 'nvim-treesitter',
+      requires = {
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        'p00f/nvim-ts-rainbow',
+        'windwp/nvim-ts-autotag',
+      }
+    },
+    {
+      'RRethy/nvim-treesitter-endwise',
+    },
   },
   { -- Lsp
     'neovim/nvim-lspconfig',
-    config = conf 'nvim-lspconfig',
+    -- config = conf 'nvim-lspconfig',
     requires = {
       'williamboman/nvim-lsp-installer',
       'ray-x/lsp_signature.nvim',
     },
+  },
+  { -- Lsp Status
+    'nvim-lua/lsp-status.nvim'
   },
   { -- Git related
     { -- Gitsign
@@ -95,10 +80,10 @@ return {
     { 'tpope/vim-commentary' },
     { 'tpope/vim-surround', requires = { 'tpope/vim-repeat' } },
   },
-  { -- Autopairs
-    'windwp/nvim-autopairs',
-    config = conf 'nvim-autopairs',
-  },
+  -- { -- Autopairs
+  --   'windwp/nvim-autopairs',
+  --   config = conf 'nvim-autopairs',
+  -- },
   { -- Indent guides
     'lukas-reineke/indent-blankline.nvim',
     config = conf 'indent-blankline',
@@ -120,10 +105,48 @@ return {
     'OmniSharp/omnisharp-vim',
     config = conf 'omnisharp'
   },
-  { -- Endwise
-    'tpope/vim-endwise'
+  -- { -- Endwise
+  --   'tpope/vim-endwise',
+  -- },
+  { -- Ruby on Rails
+    { -- Vim ruby
+      'vim-ruby/vim-ruby',
+    },
+    { -- Vim rails
+      'tpope/vim-rails'
+    },
   },
-  { -- Vim ruby
-    'vim-ruby/vim-ruby'
+  { -- Elixir
+    { -- Alchemist
+      'slashmili/alchemist.vim',
+      requires = { 'elixir-lsp/elixir_sense', },
+    },
+    { -- Elixir
+      'elixir-editors/vim-elixir',
+    },
+  },
+  { -- Auto-Pairs
+    'jiangmiao/auto-pairs'
+  },
+  { -- File Tree
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = conf 'filetree'
   }
+
+  -- { -- File tree
+  --   { -- NerdTree
+  --     'preservim/nerdtree',
+  --     requires = {
+  --       'ryanoasis/vim-devicons'
+  --     },
+  --     config = conf 'nerdtree',
+  --   },
+  --   { -- NerdTree syntax highlighting
+  --     'tiagofumo/vim-nerdtree-syntax-highlight',
+  --     config = conf 'nerdtree-syntax-highlight'
+  --   },
+  -- },
 }

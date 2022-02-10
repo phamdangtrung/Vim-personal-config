@@ -1,6 +1,6 @@
 return function()
-  local cmp = safe_require 'cmp'
-  local luasnip = safe_require 'luasnip'
+  local cmp = require 'cmp'
+  local luasnip = require 'luasnip'
   local lspkind = safe_require 'lspkind'
   if not cmp or not luasnip or not lspkind then
     return
@@ -58,9 +58,9 @@ return function()
     },
     -- Sources order are actually their priority order
     sources = {
-      { name = 'nvim_lua' },
       { name = 'nvim_lsp' },
       { name = 'luasnip', keyword_length = 2 },
+      { name = 'nvim_lua' },
       { name = 'buffer', keyword_length = 5 },
       { name = 'path' },
       { name = 'emoji' },
