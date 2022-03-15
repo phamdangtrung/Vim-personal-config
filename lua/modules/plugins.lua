@@ -80,10 +80,10 @@ return {
     { 'tpope/vim-commentary' },
     { 'tpope/vim-surround', requires = { 'tpope/vim-repeat' } },
   },
-  -- { -- Autopairs
-  --   'windwp/nvim-autopairs',
-  --   config = conf 'nvim-autopairs',
-  -- },
+  { -- Autopairs
+    'windwp/nvim-autopairs',
+    config = conf 'nvim-autopairs',
+  },
   { -- Indent guides
     'lukas-reineke/indent-blankline.nvim',
     config = conf 'indent-blankline',

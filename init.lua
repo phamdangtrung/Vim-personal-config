@@ -3,7 +3,7 @@ require 'core.options'
 require('modules.config.packer'):init()
 require('modules.config.packer'):load(require 'modules.plugins')
 require 'core.keymaps'
-require 'modules.lspservers'
+-- require 'modules.lspservers'
 
 -- CMP
 local cmp = require "cmp"
@@ -52,20 +52,6 @@ cmp.setup.cmdline(
         }
     }
 )
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
--- cmp.setup.cmdline(
---     ":",
---     {
---         sources = cmp.config.sources(
---             {
---                 {name = "path"}
---             },
---             {
---                 {name = "cmdline"}
---             }
---         )
---     }
--- )
 
 -- Setup lspconfig.
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -100,8 +86,9 @@ lspconfig.solargraph.setup {
         }
     }
 }
+
 lspconfig.elixirls.setup {
-    cmd = {"/home/tun/.lsp-servers/elixirls/language_server.sh"},
+    cmd = {"/home/phamd/.lsp-servers/elixirls/language_server.sh"},
     capabilities = capabilities,
     on_attach = require 'modules.lsp.on_attach',
 }
