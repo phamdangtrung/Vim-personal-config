@@ -88,7 +88,7 @@ lspconfig.solargraph.setup {
 }
 
 lspconfig.elixirls.setup {
-    cmd = {"/home/phamd/.lsp-servers/elixirls/language_server.sh"},
+    cmd = {"/home/phamd/.lsp/elixirls/language_server.sh"},
     capabilities = capabilities,
     on_attach = require 'modules.lsp.on_attach',
 }

@@ -34,6 +34,8 @@ map('n', '<C-n>', ' :NvimTreeToggle<CR>', opts)
 -- Telescope
 if is_git_dir == 0 then
   map('n', '<C-p>', '<cmd>lua require"telescope.builtin".git_files()<CR>')
+  map('n', '<C-l>', '<cmd>lua require"telescope.builtin".live_grep()<CR>')
 else
   map('n', '<C-p>', '<cmd>lua require"telescope.builtin".find_files()<CR>')
+  map('n', '<C-l>', '<cmd>lua require"telescope.builtin".live_grep()<CR>')
 end

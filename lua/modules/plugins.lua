@@ -45,6 +45,9 @@ return {
   { -- Lsp Status
     'nvim-lua/lsp-status.nvim'
   },
+  { -- Nvim-dap
+    'mfussenegger/nvim-dap'
+  },
   { -- Git related
     { -- Gitsign
       'lewis6991/gitsigns.nvim',
@@ -105,9 +108,9 @@ return {
     'OmniSharp/omnisharp-vim',
     config = conf 'omnisharp'
   },
-  -- { -- Endwise
-  --   'tpope/vim-endwise',
-  -- },
+  { -- Endwise
+    'tpope/vim-endwise',
+  },
   { -- Ruby on Rails
     { -- Vim ruby
       'vim-ruby/vim-ruby',
@@ -134,6 +137,9 @@ return {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
     config = conf 'filetree'
+  },
+  { -- Rainbow Ends
+    'vim-scripts/rainbow-end'
   }
 
   -- { -- File tree
