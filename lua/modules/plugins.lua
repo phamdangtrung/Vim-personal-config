@@ -140,6 +140,10 @@ return {
   },
   { -- Rainbow Ends
     'vim-scripts/rainbow-end'
+  },
+  {
+    'folke/trouble.nvim',
+    config = conf 'trouble'
   }
 
   -- { -- File tree
