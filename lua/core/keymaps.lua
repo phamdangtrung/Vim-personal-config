@@ -2,6 +2,7 @@ local map = require('core.utils').keymap.map
 
 vim.g.mapLeader = ' '
 local opts = { noremap = true, silent = true }
+local opts_map = { noremap = false, silent = true }
 
 -- Normal
 map('i', 'jk', '<Esc>')
@@ -39,3 +40,13 @@ else
   map('n', '<C-p>', '<cmd>lua require"telescope.builtin".find_files()<CR>')
   map('n', '<C-l>', '<cmd>lua require"telescope.builtin".live_grep()<CR>')
 end
+
+-- Luasnip
+-- map('i', '<Tab>', "<silent><expr>")
+vim.cmd("imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'")
+
+map('i', '<S-Tab>', "<cmd>lua require'luasnip'.jump(-1)<Cr>", opts)
+map('i', '<Tab>', "<cmd>lua require'luasnip'.jump(1)<Cr>", opts)
+
+map('s', '<Tab>', "<cmd>lua require('luasnip').jump(1)")
+map('s', '<S-Tab>', "<cmd>lua require('luasnip').jump(-1)")

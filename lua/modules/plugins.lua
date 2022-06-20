@@ -8,8 +8,7 @@ return {
     config = conf 'colors',
   },
   { -- Tagbar
-    'preservim/tagbar',
-    config = conf 'tagbar'
+    'preservim/tagbar'
   },
   { -- Icons
     'kyazdani42/nvim-web-devicons',
@@ -23,15 +22,19 @@ return {
   { -- Treesiter
     {
       'nvim-treesitter/nvim-treesitter',
-      config = conf 'nvim-treesitter',
-      requires = {
-        'JoosepAlviste/nvim-ts-context-commentstring',
-        'p00f/nvim-ts-rainbow',
-        'windwp/nvim-ts-autotag',
-      }
+      -- config = conf 'nvim-treesitter',
     },
     {
       'RRethy/nvim-treesitter-endwise',
+    },
+    {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
+    {
+      'p00f/nvim-ts-rainbow',
+    },
+    {
+      'windwp/nvim-ts-autotag',
     },
   },
   { -- Lsp
@@ -62,7 +65,7 @@ return {
   },
   { -- Autocompletion plugin
     'hrsh7th/nvim-cmp',
-    config = conf 'nvim-cmp',
+    -- config = conf 'nvim-cmp',
     requires = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-emoji',
@@ -145,18 +148,4 @@ return {
     'folke/trouble.nvim',
     config = conf 'trouble'
   }
-
-  -- { -- File tree
-  --   { -- NerdTree
-  --     'preservim/nerdtree',
-  --     requires = {
-  --       'ryanoasis/vim-devicons'
-  --     },
-  --     config = conf 'nerdtree',
-  --   },
-  --   { -- NerdTree syntax highlighting
-  --     'tiagofumo/vim-nerdtree-syntax-highlight',
-  --     config = conf 'nerdtree-syntax-highlight'
-  --   },
-  -- },
 }

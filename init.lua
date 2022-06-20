@@ -28,7 +28,28 @@ cmp.setup(
                     c = cmp.mapping.close()
                 }
             ),
-            ["<CR>"] = cmp.mapping.confirm({select = true}) -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            ["<CR>"] = cmp.mapping.confirm({select = true}),
+            ['<Tab>'] = cmp.mapping(function(fallback)
+              if cmp.visible() then
+                cmp.select_next_item()
+              elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+              else
+                fallback()
+              end
+            end, {
+              'i',
+              's',
+            }),
+            ['<S-Tab>'] = cmp.mapping(function(fallback)
+              if cmp.visible() then
+                cmp.select_prev_item()
+              elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+              else
+                fallback()
+              end
+            end), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         },
         sources = cmp.config.sources(
             {
@@ -88,7 +109,7 @@ lspconfig.solargraph.setup {
 }
 
 lspconfig.elixirls.setup {
-    cmd = {"/home/phamd/.lsp/elixirls/language_server.sh"},
+    cmd = {"/home/phamd/.lsp/elixir/language_server.sh"},
     capabilities = capabilities,
     on_attach = require 'modules.lsp.on_attach',
 }
